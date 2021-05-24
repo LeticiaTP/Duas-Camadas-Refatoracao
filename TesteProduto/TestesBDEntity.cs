@@ -15,7 +15,7 @@ namespace TesteProduto
             IRepositorio rep = new RepositorioEntity();
             try
             {
-                rep.Inserir(new Produto("Sorvete", "kibon", "gelados" ,22));
+                rep.Inserir(new Produto("Sorvete", "kibon", "gelados" , 22));
             }
             catch (Exception ex)
             {
