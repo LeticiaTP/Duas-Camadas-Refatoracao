@@ -15,31 +15,32 @@ namespace TesteProduto
             IRepositorio rep = new RepositorioMySQL();
             try
             { 
-                rep.Inserir(produto: new Produto(nome: "biscoito", marca: "futurinhos", tipo: "biscoitos e bolachas", quantidade:29));
-                
+                rep.Inserir(produto: new Produto(nome: "sorvete", marca: "kibon", tipo: "gelados", quantidade:29));               
             }
             catch (Exception ex)
             {
             
             }
-            Assert.IsNotNull(rep.Consultar(nome: "biscoito"));
+            Assert.IsNotNull(rep.Consultar(nome: "sorvete"));
         }
 
+        [TestMethod]
         public void DeletarProduto()
         {
             IRepositorio rep = new RepositorioMySQL();
             rep = new RepositorioMySQL();
             try
             {
-                rep.Deletar(nome:"biscoito");
+                rep.Deletar(nome:"sorvete");
             }
             catch (Exception ex)
             {
 
             }
-            Assert.IsNull(rep.Consultar(nome: "biscoito"));
+            Assert.IsNull(rep.Consultar(nome: "sorvete"));
         }
 
+        [TestMethod]
         public void ConsultarProduto()
         {
             Produto pro = null;
@@ -55,6 +56,7 @@ namespace TesteProduto
             Assert.IsNotNull(pro);
         }
 
+        [TestMethod]
         public void ListarProdutos()
         {
             List<Produto> produtos = null;
