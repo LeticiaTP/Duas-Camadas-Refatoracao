@@ -2,29 +2,33 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DAL
 {
     public class RepositorioEntity : IRepositorio
     {
-        public Produto Consultar(string nome)
+        private RepositorioContext db = new RepositorioContext();
+        Produto IRepositorio.Consultar(string nome)
+        {
+            return db.Produtos.First<Produto>(p => p.Nome == nome);
+        }
+
+
+        void IRepositorio.Deletar(string nome)
         {
             throw new NotImplementedException();
         }
 
-        public void Deletar(string nome)
+
+        void IRepositorio.Inserir(Produto produto)
         {
-            throw new NotImplementedException();
+            db.Add(produto);
+            db.SaveChanges();
         }
 
-        public void Inserir(Produto produto)
-        {
-            throw new NotImplementedException();
-        }
 
-        public List<Produto> Listar()
+        List<Produto> IRepositorio.Listar()
         {
             throw new NotImplementedException();
         }

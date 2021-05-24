@@ -61,7 +61,7 @@ namespace DAL
             MySqlDataReader dr = null;
             try
             {
-                dr = ExecuteReader(conexao, sql:"SELECT * FROM produtos WHERE nome like @Nome", parameters: new MySqlParameter(parameterName:"@Nome", nome));
+                dr = ExecuteReader(conexao, sql: "SELECT * FROM produtos WHERE nome like @Nome", parameters: new MySqlParameter(parameterName: "@Nome", nome));
                 while (dr.Read())
                 {
                     pro = new Produto(dr.GetInt32(column: "Id"), dr.GetString(column: "Nome"), dr.GetString(column: "Marca"), dr.GetString(column: "Tipo"), dr.GetInt32(column: "Quantidade"));

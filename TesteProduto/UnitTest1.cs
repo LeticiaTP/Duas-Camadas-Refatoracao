@@ -14,12 +14,12 @@ namespace TesteProduto
         {
             IRepositorio rep = new RepositorioMySQL();
             try
-            { 
-                rep.Inserir(produto: new Produto(nome: "sorvete", marca: "kibon", tipo: "gelados", quantidade:29));               
+            {
+                rep.Inserir(produto: new Produto(nome: "sorvete", marca: "kibon", tipo: "gelados", quantidade: 29));
             }
             catch (Exception ex)
             {
-            
+
             }
             Assert.IsNotNull(rep.Consultar(nome: "sorvete"));
         }
@@ -31,7 +31,7 @@ namespace TesteProduto
             rep = new RepositorioMySQL();
             try
             {
-                rep.Deletar(nome:"sorvete");
+                rep.Deletar(nome: "sorvete");
             }
             catch (Exception ex)
             {

@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -13,7 +8,7 @@ namespace DAL
         public RepositorioContext() : base() { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(connectionString: @"server = localhost; user id = root; pwd = batata; database = duas-camadas;");
+            optionsBuilder.UseMySQL(connectionString: @"server = localhost; user id = root; pwd = batata; database = bdteste;");
         }
 
         public DbSet<Produto> Produtos { get; set; }
